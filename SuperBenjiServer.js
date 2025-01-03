@@ -12,9 +12,10 @@ const nylasConfig = {
     apiURI: 'https://api.eu.nylas.com'
 }
 
-const nylas = new Nylas({
-    apiKey: nylasConfig.apiKey,
-    apiUri: nylasConfig.apiURI
+Nylas.config({
+    clientId: nylasConfig.clientId,
+    clientSecret: nylasConfig.apiKey,
+    apiServer: nylasConfig.apiURI,
 })
 
 app.use(bodyParser.json() , cors())
