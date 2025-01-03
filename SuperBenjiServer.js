@@ -12,16 +12,15 @@ const nylasConfig = {
     apiURI: 'https://api.eu.nylas.com'
 }
 
-Nylas.config({
-    clientId: nylasConfig.clientId,
-    clientSecret: nylasConfig.apiKey,
-    apiServer: nylasConfig.apiURI,
+const nylasInstance = new Nylas.default({
+    apiKey: nylasConfig.apiKey,
+    apiUri: nylasConfig.apiURI
 })
 
 app.use(bodyParser.json() , cors())
 
 app.get('/nylas/auth', (req, res) => {
-    const authURL = nylas.auth.urlForOAuth2({
+    const authURL = nylasInstance.auth.urlForOAuth2({
         clientId : nylasConfig.clientId,
         redirectUri: nylasConfig.callbackURI,
     })
