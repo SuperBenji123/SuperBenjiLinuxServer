@@ -4,6 +4,8 @@ const express = require('express')
 const port = process.env.PORT || 8080
 const app = express()
 const Nylas = require('nylas')
+const https = require('https')
+const fs = require('fs')
 
 const nylasConfig = {
     clientId: 'fdb5107e-c36b-4858-a105-a68a7198904f',
@@ -27,6 +29,30 @@ app.get('/nylas/auth', (req, res) => {
 
     console.log('Redirecting to :', authURL)
     res.redirect(authURL)
+})
+
+app.get('/oauth/exchange', async (req, res) => {
+    const code = req.query.code
+
+    if (!code) {
+        res.status(400).send('No authorisation code returned by Nylas')
+        return
+    }
+
+    try {
+        const response = await nylasInstance.auth.exchangeCodeForToken({
+            clientId: nylasConfig.clientId,
+            redirectUri: nylasConfig.callbackURI,
+            code
+        })
+
+        const { grantId } = response
+        console.log('Grant ID:', grantId)
+        res.redirect('https://superbenji.softr.app/email-connection-success')
+    } catch (error) {
+        console.error('Error exchanging code for token:', error)
+        res.status(500).send('Failed to exchange authorisation code for token')
+    }
 })
 
 app.get('/', (req, res) => {
