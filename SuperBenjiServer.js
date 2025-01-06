@@ -15,7 +15,7 @@ const options = {
 
 const nylasConfig = {
     clientId: 'fdb5107e-c36b-4858-a105-a68a7198904f',
-    callbackURI:'https://superbenji.softr.app/',
+    callbackURI:'https://server.omnicronical.com:8080/oauth/exchange',
     apiKey: 'nyk_v0_oGiRYIEq6FRN5Z0nE2U5nkzpBq625teIJSt4aXg1mIaZDbLpmdeGcYidYTPLuOmt',
     apiURI: 'https://api.eu.nylas.com'
 }
@@ -70,5 +70,5 @@ app.get('/hello' , (req, res) => {
 })
 
 https.createServer(options, app).listen(port, () => {
-    console.log('HTTPS server is running on port 443')
+    console.log('HTTPS server is running on port 8080')
 })
