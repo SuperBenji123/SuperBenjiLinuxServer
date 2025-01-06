@@ -7,6 +7,12 @@ const Nylas = require('nylas')
 const https = require('https')
 const fs = require('fs')
 
+const options = {
+    key: fs.readFileSync('/etc/letsencrypt/live/server.omnicronical.com/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/server.omnicronical.com/cert.pem'),
+    ca: fs.readFileSync('/etc/letsencrypt/live/server.omnicronical.com/chain.pem')
+}
+
 const nylasConfig = {
     clientId: 'fdb5107e-c36b-4858-a105-a68a7198904f',
     callbackURI:'https://superbenji.softr.app/',
@@ -61,6 +67,10 @@ app.get('/', (req, res) => {
 
 app.get('/hello' , (req, res) => {
     res.send('Hello World!!')
+})
+
+https.createServer(options, app).listen(8080, () => {
+    console.log('HTTPS server is running on port 443')
 })
 
 app.listen(port, () => console.log('server is up and running ${port}'))
