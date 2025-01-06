@@ -69,8 +69,6 @@ app.get('/hello' , (req, res) => {
     res.send('Hello World!!')
 })
 
-https.createServer(options, app).listen(8080, () => {
+https.createServer(options, app).listen(port, () => {
     console.log('HTTPS server is running on port 443')
 })
-
-app.listen(port, () => console.log('server is up and running ${port}'))
