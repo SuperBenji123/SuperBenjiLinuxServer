@@ -8,14 +8,14 @@ const https = require('https')
 const fs = require('fs')
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/server.omnicronical.com/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/server.omnicronical.com/cert.pem'),
-    ca: fs.readFileSync('/etc/letsencrypt/live/server.omnicronical.com/chain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/server.superbenji.net/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/server.superbenji.net/cert.pem'),
+    ca: fs.readFileSync('/etc/letsencrypt/live/server.superbenji.net/chain.pem')
 }
 
 const nylasConfig = {
     clientId: 'fdb5107e-c36b-4858-a105-a68a7198904f',
-    callbackURI:'https://server.omnicronical.com:8080/oauth/exchange',
+    callbackURI:'https://server.superbenji.net:8080/oauth/exchange',
     apiKey: 'nyk_v0_oGiRYIEq6FRN5Z0nE2U5nkzpBq625teIJSt4aXg1mIaZDbLpmdeGcYidYTPLuOmt',
     apiURI: 'https://api.eu.nylas.com'
 }
