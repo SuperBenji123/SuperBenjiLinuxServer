@@ -29,24 +29,24 @@ const nylasInstance = new Nylas.default({
 app.use(bodyParser.json() , cors)
 
 app.post('/crawl', (req, res) => {
-    const { url } = req.body;
+    const { url } = req.body
 
     if (!url) {
-        return res.status(400).json({ error: 'URL is required' });
+        return res.status(400).json({ error: 'URL is required' })
     }
 
     const pythonProcess = exec(`python3 webCrawler.py ${url}`, (error, stdout, stderr) => {
         if (error) {
-            console.error(`Error: ${error.message}`);
-            return res.status(500).json({ error: 'Failed to execute Python script' });
+            console.error(`Error: ${error.message}`)
+            return res.status(500).json({ error: 'Failed to execute Python script' })
         }
         if (stderr) {
-            console.error(`Stderr: ${stderr}`);
-            return res.status(500).json({ error: 'Python script error', details: stderr });
+            console.error(`Stderr: ${stderr}`)
+            return res.status(500).json({ error: 'Python script error', details: stderr })
         }
-        res.status(200).json({ result: stdout.trim() });
-    });
-});
+        res.status(200).json({ result: stdout.trim() })
+    })
+})
 
 app.get('/nylas/auth', (req, res) => {
     const authURL = nylasInstance.auth.urlForOAuth2({
