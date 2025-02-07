@@ -26,7 +26,7 @@ const nylasInstance = new Nylas.default({
     apiUri: nylasConfig.apiURI
 })
 
-app.use(bodyParser.json() , cors
+app.use(bodyParser.json() , cors)
 
 app.post('/crawl', (req, res) => {
     const { url } = req.body;
