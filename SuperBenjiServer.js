@@ -17,7 +17,7 @@ const options = {
 const nylasConfig = {
     clientId: '46d347f8-7c14-4cb3-a4ad-fa29bfeebbff',
     callbackURI:'https://server.superbenji.net:8080/oauth/exchange',
-    apiKey: 'nyk_v0_IVXV8oCs6cGNMk3hLXb09Osu2mRP1zoZmKO6m3j2Uw6dnZZxZSVYCKUuUuH1zAlt',
+    apiKey: 'nyk_v0_fLxtyG1b9OK3pRBSMaN05jYlMkaWGLxv5WDbyh8Ks14qwOEolAO31wWVH0YAq1Ml',
     apiURI: 'https://api.eu.nylas.com'
 }
 
