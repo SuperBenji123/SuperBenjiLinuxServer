@@ -15,10 +15,10 @@ const options = {
 }
 
 const nylasConfig = {
-    clientId: '46d347f8-7c14-4cb3-a4ad-fa29bfeebbff',
-    callbackURI:'https://server.superbenji.net:8080/oauth/exchange',
-    apiKey: 'nyk_v0_fLxtyG1b9OK3pRBSMaN05jYlMkaWGLxv5WDbyh8Ks14qwOEolAO31wWVH0YAq1Ml',
-    apiURI: 'https://api.eu.nylas.com'
+    clientId : process.env.CLIENT_ID,
+    callbackURI : process.env.CALLBACK_URI,
+    apiKey: process.env.NYLAS_API_KEY,
+    apiURI: process.env.NYLAS_API_URL,
 }
 
 const nylasInstance = new Nylas.default({
