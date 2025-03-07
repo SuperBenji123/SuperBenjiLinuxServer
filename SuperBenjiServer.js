@@ -65,7 +65,7 @@ app.get('/oauth/exchange', async (req, res) => {
     console.log(req)
 
     if (!code) {
-        res.status(400).send('No authorisation code returned by Nylas' + req.query)
+        res.status(400).send('No authorisation code returned by Nylas' + req.query.code)
         return
     }
 
