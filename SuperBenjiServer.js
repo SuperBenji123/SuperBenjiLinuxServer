@@ -29,6 +29,7 @@ const nylasInstance = new Nylas.default({
 })
 
 app.use(bodyParser.json() , cors())
+app.use('/.well-known', express.static('.well-known'));
 
 app.post('/crawl', (req, res) => {
     const { url } = req.body
