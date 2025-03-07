@@ -8,6 +8,8 @@ const Nylas = require('nylas')
 const https = require('https')
 const fs = require('fs')
 
+require('dotenv').config()
+
 const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/server.superbenji.net/privkey.pem'),
     cert: fs.readFileSync('/etc/letsencrypt/live/server.superbenji.net/cert.pem'),
