@@ -129,7 +129,7 @@ app.get('/oauth/exchange/microsoft', async (req, res) => {
         res.redirect('https://superbenji.softr.app/email-connection-success')
     } catch (error) {
         console.error('Error exchanging code for token:', error)
-        res.status(500).send('Failed to exchange authorisation code for token')
+        res.status(500).send('Failed to exchange authorisation code for token' + error)
     }
 })
 
