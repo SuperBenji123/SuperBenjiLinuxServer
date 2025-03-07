@@ -29,7 +29,10 @@ const nylasInstance = new Nylas.default({
 })
 
 app.use(bodyParser.json() , cors())
-app.use('/.well-known', express.static('.well-known'));
+app.get('/.well-known/microsoft-identity-association.json', (req, res) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.sendFile(__dirname + '/.well-known/microsoft-identity-association.json');
+});
 
 app.post('/crawl', (req, res) => {
     const { url } = req.body
