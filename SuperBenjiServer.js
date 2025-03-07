@@ -90,7 +90,7 @@ app.get('/oauth/exchange', async (req, res) => {
 const nylasTestingConfig = {
     clientId: 'fdb5107e-c36b-4858-a105-a68a7198904f',
     callbackURI:'https://server.superbenji.net:8080/oauth/exchange/microsoft',
-    apiKey: 'nyk_v0_xkaOr2heYgzTbcqnvxQvzJ5qY4DizUmX6a24SLq1JeoFJDJqVfR8iJRBis3trtWG',
+    apiKey: 'nyk_v0_ByThuwL4BmXYPcrQrCBfOSR88yicoWukudh6UKPDCUQAokZXKcA41mCUTxjtkNxD',
     apiURI: 'https://api.eu.nylas.com'
 }
 
