@@ -93,7 +93,7 @@ app.get('/oauth/exchange', async (req, res) => {
 
 const nylasTestingConfig = {
     clientId: 'fdb5107e-c36b-4858-a105-a68a7198904f',
-    callbackURI:'https://server.superbenji.net:8080/oauth/exchange/microsoft',
+    callbackURI:'https://server.superbenji.net/oauth/exchange/microsoft',
     apiKey: 'nyk_v0_ByThuwL4BmXYPcrQrCBfOSR88yicoWukudh6UKPDCUQAokZXKcA41mCUTxjtkNxD',
     apiURI: 'https://api.eu.nylas.com'
 }
@@ -146,5 +146,5 @@ app.get('/hello' , (req, res) => {
 })
 
 https.createServer(options, app).listen(port, () => {
-    console.log('HTTPS server is running on port 8080')
+    console.log('HTTPS server is running on port 443')
 })
